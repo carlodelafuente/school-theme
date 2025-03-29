@@ -1,6 +1,6 @@
 <?php
-function mindset_enqueues() {
-	// Load style.css on the front-end
+function school_enqueues() {
+
 	wp_enqueue_style( 
 		'school-style',
 		get_stylesheet_uri(),
@@ -21,4 +21,4 @@ function mindset_enqueues() {
 }
 
 
-add_action('wp_enqueue_scripts', 'mindset_enqueues');
+add_action('wp_enqueue_scripts', 'school_enqueues');
