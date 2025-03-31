@@ -99,6 +99,74 @@ function school_register_taxonomies() {
 add_action( 'init', 'school_register_taxonomies' );
 
 
+// add staff CPT //////////////////////////////////////////////
+function staff_register_custom_post_types() {
+    $args = array(
+        'labels'             => array(
+            'name'          => 'Staff Members',
+            'singular_name' => 'Staff Member',
+            'add_new_item'  => 'Add New Staff Member',
+            'edit_item'     => 'Edit Staff Member',
+            'new_item'      => 'New Staff Member',
+            'view_item'     => 'View Staff Member',
+        ),
+        'public'             => true,
+        'has_archive'        => true,
+        'menu_icon'          => 'dashicons-businessperson',
+        'supports'           => array('title', 'editor', 'thumbnail'),
+        'show_in_rest'       => true,
+        'template'           => array(
+            array('core/paragraph', array(
+                'placeholder' => 'Enter Job Title...',
+            )),
+            array('core/paragraph', array(
+                'placeholder' => 'Enter Email Address...',
+            )),
+        ),
+        'template_lock'       => 'all',
+    );
+
+    register_post_type('fwd-staff', $args);
+}
+add_action('init', 'staff_register_custom_post_types');
+
+function change_staff_title_placeholder($title, $post) {
+    if ($post->post_type === 'staff') {
+        return 'Add staff name';
+    }
+    return $title;
+}
+add_filter('enter_title_here', 'change_staff_title_placeholder', 10, 2);
+
+function register_staff_department_taxonomy() {
+    $args = array(
+        'labels' => array(
+            'name'              => 'Departments',
+            'singular_name'     => 'Department',
+            'search_items'      => 'Search Departments',
+            'all_items'         => 'All Departments',
+            'edit_item'         => 'Edit Department',
+            'update_item'       => 'Update Department',
+            'add_new_item'      => 'Add New Department',
+            'new_item_name'     => 'New Department Name',
+            'menu_name'         => 'Departments',
+        ),
+        'public'            => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'hierarchical'      => true,
+        'capabilities'      => array(
+            'manage_terms' => 'do_not_allow',
+            'edit_terms'   => 'do_not_allow',
+            'delete_terms' => 'do_not_allow', 
+            'assign_terms' => 'edit_posts',
+        ),
+    );
+
+    register_taxonomy('fwd-staff-department', 'fwd-staff', $args);
+}
+add_action('init', 'register_staff_department_taxonomy');
+
 
 
 
