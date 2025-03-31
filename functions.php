@@ -46,11 +46,11 @@ add_filter( 'image_size_names_choose', 'school_add_custom_image_sizes' );
 
 function enqueue_lightgallery_on_home() {
     if (is_front_page()) {
-        // Load LightGallery CSS & JS
+        
         wp_enqueue_style('lightgallery-css', 'https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css', array(), '1.4.0');
         wp_enqueue_script('lightgallery-js', 'https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js', array('jquery'), '1.4.0', true);
         
-        // Load custom JS to initialize LightGallery
+        
         wp_enqueue_script('custom-lightgallery-init', get_template_directory_uri() . '/js/lightgallery-init.js', array('lightgallery-js'), null, true);
     }
 }
