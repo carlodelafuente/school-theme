@@ -92,7 +92,7 @@ function school_register_taxonomies() {
         'show_in_rest'      => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'work-categories' ),
+        'rewrite'           => array( 'slug' => 'student-categories' ),
     );
     register_taxonomy( 'fwd-student-category', array( 'fwd-student' ), $args );
 }
