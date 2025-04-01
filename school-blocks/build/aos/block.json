@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "school-blocks/aos",
+  "title": "AOS Animation",
+  "category": "design",
+  "icon": "smiley",
+  "description": "Add scroll animations to content",
+  "attributes": {
+    "animationType": {
+      "type": "string",
+      "default": "fade-up"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "style": "file:./style-index.css"
+}
