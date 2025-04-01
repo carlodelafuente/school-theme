@@ -163,7 +163,7 @@ function staff_register_custom_post_types() {
             )),
         ),
         'template_lock'      => 'all',
-        'taxonomies'         => array('fwd-staff-department'), // This connects taxonomy with the custom post type
+        'taxonomies'         => array('fwd-staff-department'),
     );
 
     register_post_type('fwd-staff', $args);
