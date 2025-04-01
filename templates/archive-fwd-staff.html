@@ -1,43 +1,45 @@
-<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:template-part {"slug":"header","theme":"school-theme","tagName":"header"} /-->
 
 <!-- wp:group {"metadata":{"name":"Main"},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group"><!-- wp:post-title {"textAlign":"center","level":1} /-->
-
-<!-- wp:paragraph -->
-<p>Our experienced faculty brings years of hands-on experience in web development and design, ensuring that our students are equipped with cutting-edge skills and knowledge. From user experience designers to back-end engineers, our team covers every facet of web development and design to guide you through your learning journey. The administrative staff is here to provide seamless support, helping you focus on what matters most—mastering the art of coding and creating exceptional digital experiences. Explore below to meet the people who make us a thriving hub for innovation and growth!</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:group {"tagName":"section","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-<section class="wp-block-group"><!-- wp:query {"queryId":22,"query":{"perPage":10,"pages":0,"offset":0,"postType":"fwd-staff","order":"asc","orderBy":"title","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]},"layout":{"type":"constrained"}} -->
-<div class="wp-block-query"><!-- wp:heading -->
-<h2 class="wp-block-heading">Faculty</h2>
-<!-- /wp:heading -->
-
-<!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
-<!-- wp:post-title /-->
-
-<!-- wp:post-featured-image /-->
-
-<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
-<!-- /wp:post-template --></div>
-<!-- /wp:query --></section>
-<!-- /wp:group -->
-
-<!-- wp:group {"tagName":"section","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
-<section class="wp-block-group"><!-- wp:query {"queryId":22,"query":{"perPage":10,"pages":0,"offset":0,"postType":"fwd-staff","order":"asc","orderBy":"title","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[]},"layout":{"type":"constrained"}} -->
-<div class="wp-block-query"><!-- wp:heading -->
-<h2 class="wp-block-heading">Administrative</h2>
-<!-- /wp:heading -->
-
-<!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
-<!-- wp:post-title /-->
-
-<!-- wp:post-featured-image /-->
-
-<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
-<!-- /wp:post-template --></div>
-<!-- /wp:query --></section>
-<!-- /wp:group --></div>
-<!-- /wp:group -->
-
-<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+<div class="wp-block-group"><!-- wp:heading {"textAlign":"center","level":1} -->
+    <h1 class="wp-block-heading has-text-align-center">Staff</h1>
+    <!-- /wp:heading -->
+    
+    <!-- wp:paragraph -->
+    <p>Our experienced faculty brings years of hands-on experience in web development and design, ensuring that our students are equipped with cutting-edge skills and knowledge. From user experience designers to back-end engineers, our team covers every facet of web development and design to guide you through your learning journey. The administrative staff is here to provide seamless support, helping you focus on what matters most—mastering the art of coding and creating exceptional digital experiences. Explore below to meet the people who make us a thriving hub for innovation and growth!</p>
+    <!-- /wp:paragraph -->
+    
+    <!-- wp:group {"tagName":"section","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
+    <section class="wp-block-group"><!-- wp:query {"queryId":22,"query":{"perPage":10,"pages":0,"offset":0,"postType":"fwd-staff","order":"asc","orderBy":"title","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[],"taxQuery":{"fwd-staff-department":[9]}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-query"><!-- wp:heading -->
+    <h2 class="wp-block-heading">Faculty</h2>
+    <!-- /wp:heading -->
+    
+    <!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
+    <!-- wp:post-title {"level":3} /-->
+    
+    <!-- wp:post-featured-image {"style":{"border":{"radius":"11px","width":"13px"}},"borderColor":"contrast"} /-->
+    
+    <!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+    <!-- /wp:post-template --></div>
+    <!-- /wp:query --></section>
+    <!-- /wp:group -->
+    
+    <!-- wp:group {"tagName":"section","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"center"}} -->
+    <section class="wp-block-group"><!-- wp:query {"queryId":22,"query":{"perPage":10,"pages":0,"offset":0,"postType":"fwd-staff","order":"asc","orderBy":"title","author":"","search":"","exclude":[],"sticky":"","inherit":false,"parents":[],"format":[],"taxQuery":{"fwd-staff-department":[10]}},"layout":{"type":"constrained"}} -->
+    <div class="wp-block-query"><!-- wp:heading {"style":{"border":{"width":"0px","style":"none"}}} -->
+    <h2 class="wp-block-heading" style="border-style:none;border-width:0px">Administrative</h2>
+    <!-- /wp:heading -->
+    
+    <!-- wp:post-template {"layout":{"type":"grid","columnCount":2}} -->
+    <!-- wp:post-title {"level":3} /-->
+    
+    <!-- wp:post-featured-image {"style":{"border":{"width":"13px","radius":"11px"}}} /-->
+    
+    <!-- wp:post-content {"layout":{"type":"constrained"}} /-->
+    <!-- /wp:post-template --></div>
+    <!-- /wp:query --></section>
+    <!-- /wp:group --></div>
+    <!-- /wp:group -->
+    
+    <!-- wp:template-part {"slug":"footer","theme":"school-theme","tagName":"footer"} /-->
