@@ -212,7 +212,7 @@ function register_staff_department_taxonomy() {
         // ),
     );
 
-    register_taxonomy('fwd-staff-department', array('fwd-staff'), $args);
+    register_taxonomy('fwd-staff-department', 'fwd-staff', $args);
 }
 add_action('init', 'register_staff_department_taxonomy');
 
