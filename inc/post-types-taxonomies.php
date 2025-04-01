@@ -204,12 +204,12 @@ function register_staff_department_taxonomy() {
         'show_admin_column'    => true,
         'query_var'            => true,
         'rewrite'              => array( 'slug' => 'department-categories' ),
-        'capabilities'         => array(
-            'manage_terms' => 'do_not_allow',
-            'edit_terms'   => 'do_not_allow',
-            'delete_terms' => 'do_not_allow', 
-            'assign_terms' => 'edit_posts',
-        ),
+        // 'capabilities'         => array(
+        //     'manage_terms' => 'do_not_allow',
+        //     'edit_terms'   => 'do_not_allow',
+        //     'delete_terms' => 'do_not_allow', 
+        //     'assign_terms' => 'edit_posts',
+        // ),
     );
 
     register_taxonomy('fwd-staff-department', array('fwd-staff'), $args);
