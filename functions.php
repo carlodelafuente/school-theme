@@ -58,3 +58,6 @@ add_action('wp_enqueue_scripts', 'enqueue_lightgallery_on_home');
 
 
 require get_template_directory() . '/inc/post-types-taxonomies.php';
+
+// Load custom blocks
+require get_template_directory() . '/school-blocks/school-blocks.php';

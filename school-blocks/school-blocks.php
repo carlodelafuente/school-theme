@@ -2,11 +2,8 @@
 /**
  * Blocks Loader
  */
-
-// Auto-register all blocks
-foreach (glob(__DIR__ . '/build/*/block.json') as $block_json) {
-    register_block_type($block_json);
-}
+ 
+defined('ABSPATH') || exit;
 
 // Enqueue shared AOS assets
 add_action('wp_enqueue_scripts', function() {
@@ -15,22 +12,22 @@ add_action('wp_enqueue_scripts', function() {
     wp_add_inline_script('aos-js', 'AOS.init({ 
         once: true,
         duration: 600,
-        // Add other settings here
+        offset: 100
     });');
 });
 
-error_log('BLOCK PATH: ' . __DIR__ . '/build/aos/block.json');
-error_log('BLOCK EXISTS: ' . (file_exists(__DIR__ . '/build/aos/block.json') ? 'YES' : 'NO'));
-
-$result = register_block_type(__DIR__ . '/build/aos/block.json');
-error_log('REGISTRATION RESULT: ' . ($result ? 'SUCCESS' : 'FAILED'));
-
-function fix_aos_registration() {
-    // First unregister the old namespace
+// Register blocks with error handling
+add_action('init', function() {
+    $block_path = get_template_directory() . '/school-blocks/build/aos/block.json';
+    
+    // Debug output
+    error_log('AOS Block Path: ' . $block_path);
+    error_log('AOS Block Exists: ' . (file_exists($block_path) ? 'Yes' : 'No'));
+    
+    // Clean old registration first
     unregister_block_type('fwd-blocks/aos');
     
-    // Then register with correct namespace
-    $result = register_block_type(__DIR__ . '/build/aos/block.json');
-    error_log('AOS Re-registration: ' . ($result ? 'Success' : 'Failed'));
-}
-add_action('init', 'fix_aos_registration', 20);
+    // Register new block
+    $result = register_block_type($block_path);
+    error_log('AOS Registration: ' . ($result ? 'Success' : 'Failed'));
+}, 20);
