@@ -163,7 +163,7 @@ function staff_register_custom_post_types() {
             )),
         ),
         'template_lock'      => 'all',
-        'taxonomies'         => array('fwd-staff-department'), // This connects taxonomy with the custom post type
+        'taxonomies'         => array('fwd-staff-department'),
     );
 
     register_post_type('fwd-staff', $args);
@@ -204,12 +204,12 @@ function register_staff_department_taxonomy() {
         'show_admin_column'    => true,
         'query_var'            => true,
         'rewrite'              => array( 'slug' => 'department-categories' ),
-        'capabilities'         => array(
-            'manage_terms' => 'do_not_allow',
-            'edit_terms'   => 'do_not_allow',
-            'delete_terms' => 'do_not_allow', 
-            'assign_terms' => 'edit_posts',
-        ),
+        // 'capabilities'         => array(
+        //     'manage_terms' => 'do_not_allow',
+        //     'edit_terms'   => 'do_not_allow',
+        //     'delete_terms' => 'do_not_allow', 
+        //     'assign_terms' => 'edit_posts',
+        // ),
     );
 
     register_taxonomy('fwd-staff-department', array('fwd-staff'), $args);
